@@ -4,21 +4,44 @@
   box-sizing: border-box;
 }
 
+body{
+  background-color: lightgrey;
+}
+
 .central-container{
   display: flex;
   flex-wrap: wrap;
+
+  width: 600px;
+  height: 600px;
 
   margin: auto;
   margin-top: 30px;
 }
 
 .square{
-  width: calc(100% / 7);
-  height: calc(90vh / 6);
+  position: relative;
+  width: 70px;
+  height: 70px;
   background-color: violet;
   margin: 15px;
 }
 
 .square:hover{
   cursor: pointer;
+}
+
+.number{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+}
+
+.yellow{
+  background-color: yellow;
+}
+
+.green{
+  background-color: green;
 }

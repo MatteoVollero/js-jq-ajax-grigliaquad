@@ -11,22 +11,42 @@ $(document).ready(function() {
   }
 
   $(".square").click(function(){
+    var endpoint = "https://flynn.boolean.careers/exercises/api/random/int"
+    var clickedSquare = $(this);
     $.ajax(
       {
 
-        url: "http://www.boolean.careers/api/random/boolean",
+        url: endpoint,
         method: "GET",
 
         success: function (data, stato) {
-        $("#risultati").html(data);
+          console.log("Tutto è avvenuto con successo" + data.response);
+
+          //Azione di pulizia dello square in cui viene rimosso il colore precedente se presente
+          $(clickedSquare).removeClass(greenYellow(parseInt(clickedSquare.find(".number").text())));
+
+          //Aggiungo la classe opportuna
+          $(clickedSquare).addClass(greenYellow(data.response));
+
+          //Inserisco il numero al centro del quadrato
+          $(clickedSquare).find(".number").text(data.response);
         },
 
         error: function (richiesta, stato, errori) {
-        alert("E' avvenuto un errore. " + errore);
+          alert("E' avvenuto un errore. " + errore);
         }
 
       }
     );
   });
+
+  //Questa funzione ritorna direttamente il nome della classe da aggiungere
+  function greenYellow(number){
+    if(number <= 5){
+      return "yellow";
+    } else {
+      return "green";
+    }
+  }
 
 });
