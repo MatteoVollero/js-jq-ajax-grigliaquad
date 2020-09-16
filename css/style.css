@@ -8,17 +8,17 @@
   display: flex;
   flex-wrap: wrap;
 
-  width: 90%;
-  min-width: 400px;
-  height: 90vh;
-
-  padding: 15px;
-  border: 1px solid lightgrey;
   margin: auto;
   margin-top: 30px;
 }
 
 .square{
-  width: calc(100% / 6);
+  width: calc(100% / 7);
   height: calc(90vh / 6);
+  background-color: violet;
+  margin: 15px;
+}
+
+.square:hover{
+  cursor: pointer;
 }
