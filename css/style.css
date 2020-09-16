@@ -1,0 +1,24 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.central-container{
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 90%;
+  min-width: 400px;
+  height: 90vh;
+
+  padding: 15px;
+  border: 1px solid lightgrey;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.square{
+  width: calc(100% / 6);
+  height: calc(90vh / 6);
+}
